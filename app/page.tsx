@@ -78,14 +78,14 @@ const months = [
   "July", "August", "September", "October", "November", "December"
 ]
 
-function SummaryCards({ totalIncome, totalExpenses }) {
+function SummaryCards({ totalIncome, totalExpenses }: { totalIncome: number; totalExpenses: number }) {
   const remainingAmount = totalIncome - totalExpenses
 
   return (
     <div className="space-y-4">
-      <Card className="bg-[#0066FF] text-white">
+      <Card className="bg-[#00b7ff] text-white">
         <CardContent className="pt-6">
-          <div className="text-2xl font-bold">$ {totalIncome.toFixed(2)}</div>
+          <div className="text-2xl font-bold">₹ {totalIncome.toFixed(2)}</div>
           <div className="flex items-center justify-between">
             <div className="text-sm text-white/90">Income</div>
             <div className="flex items-center text-xs text-white/80">
@@ -96,9 +96,9 @@ function SummaryCards({ totalIncome, totalExpenses }) {
         </CardContent>
       </Card>
 
-      <Card className="bg-[#FF3366] text-white">
+      <Card className="bg-[#5f33ff] text-white">
         <CardContent className="pt-6">
-          <div className="text-2xl font-bold">$ {totalExpenses.toFixed(2)}</div>
+          <div className="text-2xl font-bold">₹ {totalExpenses.toFixed(2)}</div>
           <div className="flex items-center justify-between">
             <div className="text-sm text-white/90">Expense</div>
             <div className="flex items-center text-xs text-white/80">
@@ -109,9 +109,9 @@ function SummaryCards({ totalIncome, totalExpenses }) {
         </CardContent>
       </Card>
 
-      <Card className="bg-[#00CC88] text-white">
+      <Card className="bg-[#ec7943] text-white">
         <CardContent className="pt-6">
-          <div className="text-2xl font-bold">$ {remainingAmount.toFixed(2)}</div>
+          <div className="text-2xl font-bold">₹ {remainingAmount.toFixed(2)}</div>
           <div className="flex items-center justify-between">
             <div className="text-sm text-white/90">Remaining</div>
             <div className="flex items-center text-xs text-white/80">
@@ -277,7 +277,7 @@ export default function Dashboard() {
         <div className="flex h-16 items-center px-4 gap-4">
           <div className="flex items-center text-white gap-2 font-semibold text-lg">
             <Wallet className="h-6 w-6" />
-            Expense
+            BudgetIQ
           </div>
           <div className="flex-1 flex items-center">
             <div className="w-full md:w-[400px] relative">
@@ -300,9 +300,12 @@ export default function Dashboard() {
             <DropdownMenuTrigger asChild>
               <Button variant="ghost" className="relative h-8 w-8 rounded-full">
                 <Image
-                  src="/placeholder.svg?height=32&width=32"
+                  src="/assets/images/avatar.svg"
                   alt="Avatar"
                   className="rounded-full object-cover"
+                  style={{maxWidth:'none', height:'32px'}}
+                  width={32}
+                  height={32}
                 />
               </Button>
             </DropdownMenuTrigger>
