@@ -42,8 +42,8 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover"
-import { format, isSameMonth, parse, startOfMonth, endOfMonth } from "date-fns"
-import { ArrowDownIcon, ArrowUpIcon, Bell, Building2, CalendarIcon, CreditCard, Download, Edit2, LogOut, MoreHorizontal, Plus, Search, Settings, ShoppingBag, Trash2, User, Wallet, ChevronRight, ChevronDown } from 'lucide-react'
+import { format, parse, startOfMonth, endOfMonth } from "date-fns"
+import { Bell, Building2, CalendarIcon, CreditCard, Download, Edit2, LogOut, MoreHorizontal, Plus, Search, Settings, ShoppingBag, Trash2, User, Wallet, ChevronRight, ChevronDown } from 'lucide-react'
 import * as XLSX from 'xlsx'
 import {
   Collapsible,
@@ -208,6 +208,7 @@ export default function Dashboard() {
 
   const router = useRouter()
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const handleLogout = async () => {
     try {
       await signOut(auth)

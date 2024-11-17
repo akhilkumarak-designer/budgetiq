@@ -21,6 +21,7 @@ export default function Register() {
     try {
       await createUserWithEmailAndPassword(auth, email, password)
       router.push('/dashboard')
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (error) {
       setError('Failed to create an account. Please try again.')
     }

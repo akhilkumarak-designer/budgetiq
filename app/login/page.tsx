@@ -21,6 +21,7 @@ export default function Login() {
     try {
       await signInWithEmailAndPassword(auth, email, password)
       router.push('/dashboard')
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (error) {
       setError('Failed to log in. Please check your credentials.')
     }
